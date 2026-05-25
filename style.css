@@ -17,17 +17,35 @@ body{
 /* NAVBAR */
 
 .header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,.4);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+    position: fixed;
+    width: 100%;
+    height: 90px; /* altura fija */
+    top: 0;
+    left: 0;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,.4);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    overflow: visible;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.logo img {
+    height: 100px; 
+    width: auto;
+    object-fit: contain;
+
+    transform: translateY(5px);
+
 }
 
 .logo h2{
@@ -269,31 +287,146 @@ body{
 
 .program{
     padding:120px 8%;
+    background:#efe1cf;
+}
+
+.program .section-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.program .section-header span{
+    color:#d1a96a;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.9rem;
 }
 
 .program .section-header h2{
     color:#14342b;
+    font-size:4rem;
+    margin-top:10px;
+    font-weight:800;
 }
 
 .timeline{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
 }
+
+/* CARD */
 
 .timeline-item{
     display:flex;
     gap:30px;
-    margin-bottom:40px;
+    margin-bottom:35px;
     background:white;
     padding:30px;
-    border-radius:25px;
+    border-radius:28px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
+    align-items:center;
+    transition:.35s ease;
 }
 
-.timeline-hour{
+/* HOVER */
+
+.timeline-item:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+/* ICONO */
+
+.timeline-icon{
     min-width:120px;
-    font-weight:700;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+}
+
+.timeline-icon img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+
+    /*
+        Color vino institucional
+    */
+    filter:
+    brightness(0)
+    saturate(100%)
+    invert(11%)
+    sepia(30%)
+    saturate(1632%)
+    hue-rotate(312deg)
+    brightness(92%)
+    contrast(92%);
+}
+
+.timeline-icon span{
+    font-size:1rem;
+    font-weight:800;
     color:#7b102f;
+    letter-spacing:3px;
+}
+
+/* CONTENIDO */
+
+.timeline-content{
+    flex:1;
+}
+
+.timeline-content h3{
+    font-size:1.8rem;
+    margin-bottom:10px;
+    color:#14342b;
+    font-weight:700;
+}
+
+.timeline-content p{
+    font-size:1.05rem;
+    line-height:1.7;
+    color:#444;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+    .program{
+        padding:90px 6%;
+    }
+
+    .program .section-header h2{
+        font-size:2.4rem;
+        line-height:1.2;
+    }
+
+    .timeline-item{
+        flex-direction:column;
+        text-align:center;
+        padding:25px;
+    }
+
+    .timeline-icon{
+        min-width:auto;
+    }
+
+    .timeline-content h3{
+        font-size:1.4rem;
+    }
+
+    .timeline-content p{
+        font-size:1rem;
+    }
+
 }
 
 /* REGISTER */
