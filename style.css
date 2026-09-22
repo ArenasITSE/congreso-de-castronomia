@@ -1212,3 +1212,40 @@ img.omar-modal-image{
     }
 
 }
+
+.register{
+    position: relative;
+    overflow: hidden;
+}
+
+.register-background{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.register-slide{
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.register-slide.active{
+    opacity: 1;
+}
+
+.register-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 1;
+}
+
+.register-container{
+    position: relative;
+    z-index: 2;
+    color: white;
+}

@@ -7,7 +7,6 @@ const imagenesCarrusel = [
     "assets/carrusel/autobus.jpg",
     "assets/carrusel/chiclero.jpg",
     "assets/carrusel/dann.JPG",
-    "assets/carrusel/familia.jpg",
     "assets/carrusel/imagen10.jpg",
     "assets/carrusel/imagen11.jpeg",
     "assets/carrusel/imagen12.jpg",
@@ -26,6 +25,57 @@ const slides =
 let indiceActual = 0;
 
 let slideActual = 0;
+
+
+/* =========================================
+   CARRUSEL REGISTRO
+========================================= */
+
+const imagenesRegistro = [
+    "assets/carrusel2/CSP-987879.jpeg",
+    "assets/carrusel2/Cuadro-7.jpg",
+    "assets/carrusel2/Cuadro-16.jpg",
+    "assets/carrusel2/Cuadro-17.jpg",
+    "assets/carrusel2/DSC_1980-2.jpg",
+    "assets/carrusel2/hospita 2l editada.jpg",
+    "assets/carrusel2/IMG_5218.jpg",
+    "assets/carrusel2/IMG_8514.jpeg",
+    "assets/carrusel2/IMG20240914172952-3.jpg",
+    "assets/carrusel2/Silla 2 editada.jpg",
+
+];
+
+const registerSlides =
+    document.querySelectorAll(".register-slide");
+
+let registerIndex = 0;
+let registerSlideActual = 0;
+
+/* Primera imagen */
+registerSlides[0].style.backgroundImage =
+    `url("${imagenesRegistro[0]}")`;
+
+/* Cambio automático */
+setInterval(() => {
+
+    const siguienteIndice =
+        (registerIndex + 1) %
+        imagenesRegistro.length;
+
+    const siguienteSlide =
+        registerSlideActual === 0 ? 1 : 0;
+
+    registerSlides[siguienteSlide].style.backgroundImage =
+        `url("${imagenesRegistro[siguienteIndice]}")`;
+
+    registerSlides[siguienteSlide].classList.add("active");
+
+    registerSlides[registerSlideActual].classList.remove("active");
+
+    registerSlideActual = siguienteSlide;
+    registerIndex = siguienteIndice;
+
+}, 4000);
 
 
 /* =========================================
