@@ -372,10 +372,11 @@ body{
 }
 
 .speaker-container{
-    display:grid;
+    display:flex;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+    flex-wrap:wrap;
+
+    justify-content:center;
 
     gap:40px;
 }
@@ -390,6 +391,12 @@ body{
     transition:.4s;
 
     cursor:pointer;
+
+    flex:0 1 350px;
+
+    width:100%;
+
+    max-width:350px;
 }
 
 .speaker-card:hover{
