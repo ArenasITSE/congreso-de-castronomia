@@ -492,3 +492,57 @@ function cerrarSpeakerModal(){
 
 
 }
+
+/* =========================================
+   AGENDA INTERACTIVA
+========================================= */
+
+const timelineEntries =
+    document.querySelectorAll(".timeline-entry");
+
+
+timelineEntries.forEach(entry => {
+
+    const timelineItem =
+        entry.querySelector(".timeline-item");
+
+
+    timelineItem.addEventListener("click", () => {
+
+
+        /*
+            Si ya está abierto,
+            simplemente lo cerramos.
+        */
+
+        if(entry.classList.contains("active")){
+
+            entry.classList.remove("active");
+
+            return;
+
+        }
+
+
+        /*
+            Cerrar cualquier otra
+            actividad abierta.
+        */
+
+        timelineEntries.forEach(otherEntry => {
+
+            otherEntry.classList.remove("active");
+
+        });
+
+
+        /*
+            Abrir la actividad
+            seleccionada.
+        */
+
+        entry.classList.add("active");
+
+    });
+
+});
