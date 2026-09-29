@@ -698,14 +698,11 @@ form button{
 
 .register-btn {
     margin: 40px auto 0;
-
     position: relative;
 
     display: block;
-
-    width: 440px;
+    width: 300px;
     padding: 18px 38px;
-
     box-sizing: border-box;
 
     background: linear-gradient(
@@ -716,7 +713,6 @@ form button{
 
     color: white;
     text-decoration: none;
-
     border-radius: 60px;
 
     font-size: 18px;
@@ -731,8 +727,16 @@ form button{
         0 10px 30px rgba(123,16,47,.4);
 }
 
+.register-btn span {
+    display: block;
+    text-align: center;
+}
+
 .register-btn i {
-   display: none
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
