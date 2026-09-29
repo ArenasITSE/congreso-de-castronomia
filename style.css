@@ -696,18 +696,19 @@ form button{
     cursor:pointer;
 }
 
-
 .register-btn {
-    margin-top: 40px;
+    margin: 40px auto 0;
 
     position: relative;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
 
-    background:
-    linear-gradient(
+    width: 440px;
+    padding: 18px 38px;
+
+    box-sizing: border-box;
+
+    background: linear-gradient(
         135deg,
         #7b102f,
         #a11642
@@ -716,24 +717,22 @@ form button{
     color: white;
     text-decoration: none;
 
-    padding: 18px 38px;
-
     border-radius: 60px;
 
     font-size: 18px;
     font-weight: 600;
     letter-spacing: .5px;
 
+    text-align: center;
+
     transition: .4s ease;
 
     box-shadow:
-    0 10px 30px rgba(123,16,47,.4);
+        0 10px 30px rgba(123,16,47,.4);
 }
 
 .register-btn i {
-    position: absolute;
-    left: 38px;
-    font-size: 18px;
+   display: none
 }
 
 
